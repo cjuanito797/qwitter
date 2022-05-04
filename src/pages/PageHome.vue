@@ -57,7 +57,7 @@
 
             <q-item-section>
               <q-item-label class="text-subtitle1">
-                <strong>George Royce</strong>
+                <strong>Cjuanito797</strong>
                 <span class="text-grey-7">
                 @manizha_salomova
                 <br class="lt-md">&bull; {{qweet.date | relativeDate}}
@@ -106,20 +106,21 @@
   </q-page>
 </template>
 
-
 <script>
 import db from 'src/boot/firebase'
-import {formatDistance} from 'date-fns'
+import { formatDistance } from 'date-fns'
+
 export default {
   name: 'PageHome',
   data() {
     return {
       newQweetContent: '',
+      qweets: [
+
+              ]
 
     }
   },
-
-
   methods:{
     addNewQweet() {
       let newQweet = {
@@ -182,13 +183,13 @@ export default {
     })
   }
 }
-
 </script>
 
 <style lang ="sass">
   .divider
     border-top: 1px solid
     border-bottom: 1px solid
+    border-color: grey-4
 
   .new-qweet
     textarea
@@ -197,5 +198,11 @@ export default {
       border-color: grey-4
   .qweet-content
     white-space: pre-line
+
+  .qweet-icons
+    margin-left: -5px
+
+  .qweet:not(:first-child)
+   border-top: 1px solid rgba(0, 0 , 0, 0.12)
 
 </style>
